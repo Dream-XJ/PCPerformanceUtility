@@ -12,17 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HandyControl.Controls;
-using Window = HandyControl.Controls.Window;
 
-namespace PCPerformanceUtility.Wpf
+namespace PCPerformanceUtility.Wpf.View.Pages
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// HomePage.xaml 的交互逻辑
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class HomePage : Page
 	{
-		public MainWindow()
+		public HomePage()
 		{
 			InitializeComponent();
 		}

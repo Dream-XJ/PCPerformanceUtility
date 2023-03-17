@@ -1,13 +1,67 @@
-﻿<hc:GlowWindow x:Class="PCPerformanceUtility.Wpf.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PCPerformanceUtility.Wpf"
-        xmlns:hc="https://handyorg.github.io/handycontrol"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ActiveGlowColor="#2b579a">
+﻿<hc:Window
+    x:Class="PCPerformanceUtility.Wpf.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:PCPerformanceUtility.Wpf"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:PCPerformanceUtility.Wpf.ViewModel"
+    Title="PC Performance Utility"
+    Width="1200"
+    Height="675"
+    mc:Ignorable="d">
+    <hc:Window.DataContext>
+        <vm:MainViewModel />
+    </hc:Window.DataContext>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <hc:SideMenu Grid.Column="0">
+            <hc:SideMenuItem
+                Command="{Binding SwitchPageCommand}"
+                CommandParameter="HomePage"
+                Header="主页"
+                IsSelected="True">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="18"
+                        Text="&#xE80F;" />
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem
+                Command="{Binding SwitchPageCommand}"
+                CommandParameter="ScanPage"
+                Header="扫描">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="18"
+                        Text="&#xEE6F;" />
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+            <hc:SideMenuItem
+                Command="{Binding SwitchPageCommand}"
+                CommandParameter="SettingsPage"
+                Header="设置">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="18"
+                        Text="&#xE713;" />
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+        </hc:SideMenu>
+
+        <Frame
+            Grid.Column="1"
+            Content="{Binding CurrentPage}"
+            NavigationUIVisibility="Hidden" />
     </Grid>
-</hc:GlowWindow>
+</hc:Window>
