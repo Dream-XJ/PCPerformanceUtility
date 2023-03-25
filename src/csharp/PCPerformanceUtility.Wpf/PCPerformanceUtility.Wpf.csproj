@@ -11,12 +11,14 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
     <PackageReference Include="HandyControl" Version="3.4.0" />
+    <PackageReference Include="System.Management" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="View\Window\" />
     <Folder Include="Resources\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>

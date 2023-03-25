@@ -14,6 +14,7 @@
     <hc:Window.DataContext>
         <vm:MainViewModel />
     </hc:Window.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".2*" />
@@ -45,6 +46,19 @@
                         Text="&#xEE6F;" />
                 </hc:SideMenuItem.Icon>
             </hc:SideMenuItem>
+
+            <hc:SideMenuItem
+                Command="{Binding SwitchPageCommand}"
+                CommandParameter="HealthPage"
+                Header="健康">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="18"
+                        Text="&#xE95E;" />
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
 
             <hc:SideMenuItem
                 Command="{Binding SwitchPageCommand}"

@@ -16,6 +16,7 @@ public partial class MainViewModel : ObservableObject
 			"HomePage" => new HomePage(),
 			"ScanPage" => new ScanPage(),
 			"SettingsPage" => new SettingsPage(),
+			"HealthPage" => new HealthPage(),
 			_ => throw new ArgumentOutOfRangeException(nameof(page))
 		};
 	}

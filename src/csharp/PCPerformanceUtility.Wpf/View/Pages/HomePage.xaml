@@ -1,14 +1,44 @@
-﻿<Page x:Class="PCPerformanceUtility.Wpf.View.Pages.HomePage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:PCPerformanceUtility.Wpf.View.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="675" d:DesignWidth="960"
-      Title="HomePage">
+﻿<Page
+    x:Class="PCPerformanceUtility.Wpf.View.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PCPerformanceUtility.Wpf.View.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:PCPerformanceUtility.Wpf.ViewModel"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    Title="HomePage"
+    d:DesignHeight="675"
+    d:DesignWidth="960"
+    mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="PC Performance Utility" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="24"/>
-    </Grid>
+    <Page.DataContext>
+        <vm:HomeViewModel/>
+    </Page.DataContext>
+
+    <hc:TransitioningContentControl>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <Grid Margin="10">
+                <Border
+                    Width="600"
+                    Height="300"
+                    Background="White"
+                    CornerRadius="10" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="PC Performance Utility" FontWeight="Bold" FontSize="24"/>
+            </Grid>
+            <Grid Margin="10">
+                <Border
+                    Width="600"
+                    Height="100"
+                    Background="White"
+                    CornerRadius="10" />
+
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding EverydayPoem}"/>
+            </Grid>
+
+        </StackPanel>
+    </hc:TransitioningContentControl>
 </Page>
